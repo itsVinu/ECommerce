@@ -18,7 +18,7 @@ const productRoutes = require('./routes/product')
 const authRoutes = require('./routes/auth')
 const cartRoutes = require('./routes/cart')
 const myProductRoute = require('./routes/myProduct')
-const paymentRoute = require('./routes/payment')
+// const paymentRoute = require('./routes/payment')
 
 
 app.set('view engine','ejs');
@@ -88,7 +88,7 @@ app.use(productRoutes)
 app.use(authRoutes)
 app.use(cartRoutes)
 app.use(myProductRoute)
-app.use(paymentRoute)
+// app.use(paymentRoute)
 
 app.listen(3000,()=>{
     console.log('server started at port 3000 successfully')
