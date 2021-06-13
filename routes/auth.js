@@ -2,7 +2,6 @@ if(process.env.NODE_ENV != 'production'){
   require('dotenv').config()
 }
 
-
 const express = require('express')
 const router = express.Router()
 const User = require('../models/user')
@@ -56,6 +55,19 @@ router.post('/login',
                 res.redirect('/login')
             }
 })
+
+// Logging Out the User 
+router.get('/logout',(req,res)=>{
+  req.logout()
+  res.redirect('/login')
+})
+
+
+
+
+
+
+
 
 // forgot password
 router.get('/forgot', function(req, res) {
@@ -174,20 +186,5 @@ router.get('/forgot', function(req, res) {
     });
   });
   
-
-
-
-
-
-
-
-
-
-
-// Logging Out the User 
-router.get('/logout',(req,res)=>{
-    req.logout()
-    res.redirect('/login')
-})
 
 module.exports = router;
